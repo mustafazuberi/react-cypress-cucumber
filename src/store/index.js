@@ -15,12 +15,11 @@ export const useBearStore = create(
       logOut: () =>
         set(() => ({ isLoggedIn: false, credentials: null, projects: [] })),
       getProjects: async () => {
-        const TOKEN =
-          "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";
+        const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
         const headers = {
           Authorization: `token ${TOKEN}`,
-          "User-Agent": "YourAppName",
+          "User-Agent": "Learning Cypress",
         };
 
         const projects = await octokit.rest.repos.listForOrg({

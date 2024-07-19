@@ -16,8 +16,6 @@ function App() {
     }
   }, [isLoggedIn, navigate, getProjects]);
 
-  console.log("projects", projects);
-
   return (
     <div className="App flex flex-col flex-1 justify-center items-center">
       <div className="projects mt-10 w-10/12 relative z-10 divide-y divide-slate-100 my-auto xl:mt-18 dark:bg-slate-800 dark:divide-slate-200/5 dark:highlight-white/10">
