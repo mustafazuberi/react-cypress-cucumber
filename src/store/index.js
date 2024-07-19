@@ -15,10 +15,20 @@ export const useBearStore = create(
       logOut: () =>
         set(() => ({ isLoggedIn: false, credentials: null, projects: [] })),
       getProjects: async () => {
+        const TOKEN =
+          "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";
+
+        const headers = {
+          Authorization: `token ${TOKEN}`,
+          "User-Agent": "YourAppName",
+        };
+
         const projects = await octokit.rest.repos.listForOrg({
           org: "code-with-ahsan",
           type: "public",
+          headers,
         });
+
         set({ projects: projects.data });
       },
     }),

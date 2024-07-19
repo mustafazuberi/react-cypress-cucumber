@@ -11,8 +11,9 @@ const Header = () => {
       <div className="flex items-center ">
         {isLoggedIn && (
           <div className="flex items-center gap-x-3">
-            <div className="text-sm text-white">{credentials.email}</div>
+            <div className="text-sm text-white" id="userEmail">{credentials.email}</div>
             <button
+              id="logoutButton"
               className="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
               onClick={() => {
                 logOut();
